@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterCtrl : MonoBehaviour
+public class MonsterCtrl : MonsterStats
 {
     public int hp = 5;
     Rigidbody2D rb;
