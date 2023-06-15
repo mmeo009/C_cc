@@ -44,8 +44,7 @@ public class MonsterCtrl : MonsterStats
             Destroy(this.gameObject);
         }
     }
-
-    public void Attack_1()
+    public void AttackType_1()
     {
 
     }

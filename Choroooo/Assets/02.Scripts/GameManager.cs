@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public int maxHp = 5;
     public int hp;
     public int dmg;
+    public int gold;
 
     public GameManager() { }
     public static GameManager Instance { get; private set; }
@@ -31,9 +32,12 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if(count >= 2)
+switch(count)
         {
-            MoveScene("Play2");
+            case 1:
+                break;
+            case 2:
+                break;
         }
     }
     private void OnDestroy()
