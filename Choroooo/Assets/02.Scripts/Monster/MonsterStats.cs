@@ -6,7 +6,7 @@ public class MonsterStats : MonoBehaviour
 {
     protected MonsterSet Mon;
 
-    protected virtual void StatSetting(int monsterType, int attackType, int stage, int hp, float moveSpeed, float attackSpeed)
+    protected virtual void MonsterStatSetting(int monsterType, int attackType, int stage, int hp, float moveSpeed, float attackSpeed)
     {
         Mon.MonT = monsterType;
         Mon.AT = attackType;
