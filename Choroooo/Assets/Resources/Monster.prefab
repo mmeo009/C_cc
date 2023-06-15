@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2324526795541369466}
   m_Layer: 0
   m_Name: Monster
-  m_TagString: Monster
+  m_TagString: Mon_1_1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b093983546412404baffda20fd6f703c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 5
   manager: {fileID: 0}
 --- !u!50 &6346911150681038879
 Rigidbody2D:

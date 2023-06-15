@@ -32,7 +32,7 @@ public class MonsterCtrl : MonsterStats
     {
         if (Mon.MonT == 1) 
         {
-            rb.velocity = new Vector2(rb.velocity.x, -1);
+            // rb.velocity = new Vector2(rb.velocity.x, -1);
         }
     }
     public void GetDmg(int dmg)

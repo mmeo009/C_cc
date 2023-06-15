@@ -14,7 +14,7 @@ public class BulletCtrl : MonoBehaviour
     {
         Debug.Log(other.gameObject.name);
 
-        if (other.gameObject.tag == "Monster")
+        if (other.gameObject.layer == 3)
         {
             other.gameObject.GetComponent<MonsterCtrl>().GetDmg(1);
             Destroy(this.gameObject);
