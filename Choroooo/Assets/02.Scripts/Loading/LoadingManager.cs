@@ -5,20 +5,15 @@ using UnityEngine.UI;
 
 public class LoadingManager : MonoBehaviour
 {
-    static string SceneName;
     public Image bar;
-    public static void LoadScene(string nextScene)
-    {
-        SceneName = nextScene;
-        SceneManager.LoadScene("Loading");
-    }
+    protected GameManager GameManager => GameManager.Instance;
     void Start()
     {
         StartCoroutine(LoadingProcess());
     }
     IEnumerator LoadingProcess()
     {
-        AsyncOperation aO = SceneManager.LoadSceneAsync(SceneName);
+        AsyncOperation aO = SceneManager.LoadSceneAsync(GameManager.SceneName);
         aO.allowSceneActivation = false;
 
         float timer = 0f;

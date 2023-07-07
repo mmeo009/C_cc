@@ -4,7 +4,19 @@ using UnityEngine;
 
 public class BulletCtrl : MonoBehaviour
 {
-
+    protected GameManager GameManager => GameManager.Instance;
+    public int bulletType = 0;
+    private void Awake()
+    {
+        if(GameManager.dmg < 6)
+        {
+            bulletType = 1;
+        }
+        else if(GameManager.dmg < 11)
+        {
+            bulletType = 2;
+        }
+    }
     void FixedUpdate()
     {
         float moveAmount = 10 * Time.fixedDeltaTime;
@@ -16,7 +28,7 @@ public class BulletCtrl : MonoBehaviour
 
         if (other.gameObject.layer == 3)
         {
-            other.gameObject.GetComponent<MonsterCtrl>().GetDmg(1);
+            other.gameObject.GetComponent<MonsterCtrl>().GetDmg(bulletType);
             Destroy(this.gameObject);
         }
     }

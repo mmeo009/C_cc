@@ -27,36 +27,35 @@ public class PlayerCtrl : MonoBehaviour
     {
         Vector3 pos = this.transform.position;
         Quaternion rot = this.transform.rotation;
-        switch(GameManager.dmg)
+        if(GameManager.dmg % 10 == 1 || GameManager.dmg % 10 == 6)
         {
-            case 0:
-                break; 
-            case 1:
-                Instantiate(bullet, pos, rot);
-                break;
-                case 2:
-                Instantiate(bullet, pos, rot);
-                Instantiate(bullet, pos + new Vector3(0.15f,-0.15f,0), rot);
-                break;
-            case 3:
-                Instantiate(bullet, pos, rot);
-                Instantiate(bullet, pos + new Vector3(0.15f, -0.15f, 0), rot);
-                Instantiate(bullet, pos + new Vector3(-0.15f, -0.15f, 0), rot);
-                break;
-            case 4:
-                Instantiate(bullet, pos, rot);
-                Instantiate(bullet, pos + new Vector3(0.15f, -0.15f, 0), rot);
-                Instantiate(bullet, pos + new Vector3(-0.15f, -0.15f, 0), rot);
-                Instantiate(bullet, pos + new Vector3(0.3f, -0.3f, 0), rot);
-                break;
-            case 5:
-                Instantiate(bullet, pos, rot);
-                Instantiate(bullet, pos + new Vector3(0.15f, -0.15f, 0), rot);
-                Instantiate(bullet, pos + new Vector3(-0.15f, -0.15f, 0), rot);
-                Instantiate(bullet, pos + new Vector3(0.3f, -0.3f, 0), rot);
-                Instantiate(bullet, pos + new Vector3(-0.3f, -0.3f, 0), rot);
-                break;
-
+            Instantiate(bullet, pos, rot);
+        }
+        else if(GameManager.dmg % 10 == 2 || GameManager.dmg % 10 == 7)
+        {
+            Instantiate(bullet, pos, rot);
+            Instantiate(bullet, pos + new Vector3(0.15f, -0.15f, 0), rot);
+        }
+        else if (GameManager.dmg % 10 == 3 || GameManager.dmg % 10 == 8)
+        {
+            Instantiate(bullet, pos, rot);
+            Instantiate(bullet, pos + new Vector3(0.15f, -0.15f, 0), rot);
+            Instantiate(bullet, pos + new Vector3(-0.15f, -0.15f, 0), rot);
+        }
+        else if(GameManager.dmg % 10 == 4 || GameManager.dmg % 10 == 9)
+        {
+            Instantiate(bullet, pos, rot);
+            Instantiate(bullet, pos + new Vector3(0.15f, -0.15f, 0), rot);
+            Instantiate(bullet, pos + new Vector3(-0.15f, -0.15f, 0), rot);
+            Instantiate(bullet, pos + new Vector3(0.3f, -0.3f, 0), rot);
+        }
+        else if(GameManager.dmg % 5 == 0)
+        {
+            Instantiate(bullet, pos, rot);
+            Instantiate(bullet, pos + new Vector3(0.15f, -0.15f, 0), rot);
+            Instantiate(bullet, pos + new Vector3(-0.15f, -0.15f, 0), rot);
+            Instantiate(bullet, pos + new Vector3(0.3f, -0.3f, 0), rot);
+            Instantiate(bullet, pos + new Vector3(-0.3f, -0.3f, 0), rot);
         }
     }
     public void GetDmg(int d)

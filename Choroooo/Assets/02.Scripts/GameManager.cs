@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public int hp;
     public int dmg;
     public int gold;
+    public string SceneName;
 
     public GameManager() { }
     public static GameManager Instance { get; private set; }
@@ -32,7 +33,7 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-switch(count)
+        switch(count)
         {
             case 1:
                 break;
@@ -40,16 +41,9 @@ switch(count)
                 break;
         }
     }
-    private void OnDestroy()
+    public void LoadScene(string nextScene)
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;  
-    }
-    public void MoveScene(string SceneName)
-    {
-        SceneManager.LoadScene(SceneName);
-    }
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-
+        SceneName = nextScene;
+        SceneManager.LoadScene("Loading");
     }
 }
