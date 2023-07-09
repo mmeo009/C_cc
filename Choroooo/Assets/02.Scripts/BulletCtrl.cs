@@ -5,11 +5,11 @@ using UnityEngine;
 public class BulletCtrl : MonoBehaviour
 {
     protected GameManager GameManager => GameManager.Instance;
-    public int bulletType = 0;
+    private SpriteRenderer sp;
     private void Awake()
     {
-        int dmg = GameManager.dmg;
-        bulletType = dmg / 5 + 1;
+        sp = GetComponent<SpriteRenderer>();
+        sp.color = new Color(GameManager.r, GameManager.g, GameManager.b);
     }
     void FixedUpdate()
     {
@@ -22,7 +22,7 @@ public class BulletCtrl : MonoBehaviour
 
         if (other.gameObject.layer == 3)
         {
-            other.gameObject.GetComponent<MonsterCtrl>().GetDmg(bulletType);
+            other.gameObject.GetComponent<MonsterCtrl>().GetDmg(GameManager.bulletType);
             Destroy(this.gameObject);
         }
     }
