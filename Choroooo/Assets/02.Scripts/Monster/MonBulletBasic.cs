@@ -10,20 +10,7 @@ public class MonBulletBasic : MonoBehaviour
     public float timer;
     public float hp;
     public float speed;
-    public void Ready(int bulletType)
-    {
-        type = bulletType;
-        Reload(0);
-    }
-    private void Reload(float IDKWII)
-    {
-        switch (type)
-        {
-            case 0:
-                timer = 5.0f;
-                break;
-        }
-    }
+
     void Start()
     {
         if (type == 0)
@@ -65,6 +52,20 @@ public class MonBulletBasic : MonoBehaviour
         {
             Destroy(other.gameObject);
             Destroy(this.gameObject);
+        }
+    }
+    public void Ready(int bulletType)
+    {
+        type = bulletType;
+        Reload(0);
+    }
+    private void Reload(float IDKWII)
+    {
+        switch (type)
+        {
+            case 0:
+                timer = 5.0f;
+                break;
         }
     }
 }

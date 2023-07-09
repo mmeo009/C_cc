@@ -8,14 +8,8 @@ public class BulletCtrl : MonoBehaviour
     public int bulletType = 0;
     private void Awake()
     {
-        if(GameManager.dmg < 6)
-        {
-            bulletType = 1;
-        }
-        else if(GameManager.dmg < 11)
-        {
-            bulletType = 2;
-        }
+        int dmg = GameManager.dmg;
+        bulletType = dmg / 5 + 1;
     }
     void FixedUpdate()
     {
