@@ -70,9 +70,9 @@ public class GameManager : MonoBehaviour
     {
         if(bulletType != 1)
         {
-            r = Random.Range(0, 255);
-            g = Random.Range(0, 255);
-            b = Random.Range(0, 255);
+            r = Random.Range(0.0f, 1.0f);
+            g = Random.Range(0.0f, 1.0f);
+            b = Random.Range(0.0f, 1.0f);
         }
     }
 }
